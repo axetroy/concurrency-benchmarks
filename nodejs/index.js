@@ -16,7 +16,7 @@ function sleep(ms) {
 
 http
   .createServer(async function(request, response) {
-    await sleep(500);
+    await sleep(200);
     const raw = await readFile(filePath);
     response.end(raw);
   })

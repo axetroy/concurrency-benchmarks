@@ -41,18 +41,18 @@ v10.15.3
 > node nodejs/index.js
 > bash run.sh
 
-Transactions:		        1656 hits
+Transactions:		        4306 hits
 Availability:		      100.00 %
-Elapsed time:		        9.08 secs
-Data transferred:	        0.03 MB
-Response time:		        0.53 secs
-Transaction rate:	      182.38 trans/sec
-Throughput:		        0.00 MB/sec
-Concurrency:		       96.72
-Successful transactions:        1656
+Elapsed time:		        9.58 secs
+Data transferred:	        0.07 MB
+Response time:		        0.22 secs
+Transaction rate:	      449.48 trans/sec
+Throughput:		        0.01 MB/sec
+Concurrency:		       98.74
+Successful transactions:        4306
 Failed transactions:	           0
-Longest transaction:	        0.61
-Shortest transaction:	        0.50
+Longest transaction:	        0.29
+Shortest transaction:	        0.20
 ```
 
 ### Deno
@@ -65,18 +65,18 @@ typescript: 3.4.1
 > deno run --allow-all deno/index.ts
 > bash run.sh
 
-Transactions:		          18 hits
+Transactions:		          47 hits
 Availability:		      100.00 %
-Elapsed time:		        9.19 secs
+Elapsed time:		        9.85 secs
 Data transferred:	        0.00 MB
-Response time:		        4.84 secs
-Transaction rate:	        1.96 trans/sec
+Response time:		        4.98 secs
+Transaction rate:	        4.77 trans/sec
 Throughput:		        0.00 MB/sec
-Concurrency:		        9.48
-Successful transactions:          18
+Concurrency:		       23.79
+Successful transactions:          47
 Failed transactions:	           0
-Longest transaction:	        9.12
-Shortest transaction:	        0.00
+Longest transaction:	        9.71
+Shortest transaction:	        0.28
 ```
 
 ### Golang
@@ -87,18 +87,18 @@ go version go1.11.2 darwin/amd64
 > go run go/main.go
 > bash run.sh
 
-Transactions:		        1800 hits
+Transactions:		        4509 hits
 Availability:		      100.00 %
-Elapsed time:		        9.50 secs
-Data transferred:	        0.03 MB
-Response time:		        0.51 secs
-Transaction rate:	      189.47 trans/sec
-Throughput:		        0.00 MB/sec
-Concurrency:		       96.51
-Successful transactions:        1800
+Elapsed time:		        9.51 secs
+Data transferred:	        0.08 MB
+Response time:		        0.21 secs
+Transaction rate:	      474.13 trans/sec
+Throughput:		        0.01 MB/sec
+Concurrency:		       98.58
+Successful transactions:        4509
 Failed transactions:	           0
-Longest transaction:	        0.55
-Shortest transaction:	        0.50
+Longest transaction:	        0.24
+Shortest transaction:	        0.20
 ```
 
 ### Python
@@ -109,17 +109,17 @@ Python 3.7.3
 > python3 python3/index.py
 > bash run.sh
 
-Transactions:		          46 hits
-Availability:		       36.51 %
-Elapsed time:		        9.44 secs
+Transactions:		          47 hits
+Availability:		       35.88 %
+Elapsed time:		        9.80 secs
 Data transferred:	        0.00 MB
-Response time:		        1.17 secs
-Transaction rate:	        4.87 trans/sec
+Response time:		        1.16 secs
+Transaction rate:	        4.80 trans/sec
 Throughput:		        0.00 MB/sec
-Concurrency:		        5.71
-Successful transactions:          46
-Failed transactions:	          80
-Longest transaction:	        1.64
+Concurrency:		        5.58
+Successful transactions:          47
+Failed transactions:	          84
+Longest transaction:	        1.26
 Shortest transaction:	        0.00
 ```
 
@@ -133,16 +133,16 @@ Document root is /Users/axetroy/gpm/github.com/axetroy/concurrency-benchmarks
 Press Ctrl-C to quit.
 > bash run.sh
 
-Transactions:		          45 hits
+Transactions:		          48 hits
 Availability:		      100.00 %
-Elapsed time:		        9.21 secs
+Elapsed time:		        9.83 secs
 Data transferred:	        0.00 MB
-Response time:		        4.71 secs
-Transaction rate:	        4.89 trans/sec
+Response time:		        5.03 secs
+Transaction rate:	        4.88 trans/sec
 Throughput:		        0.00 MB/sec
-Concurrency:		       23.02
-Successful transactions:          45
+Concurrency:		       24.55
+Successful transactions:          48
 Failed transactions:	           0
-Longest transaction:	        9.19
-Shortest transaction:	        0.00
+Longest transaction:	        9.81
+Shortest transaction:	        0.24
 ```

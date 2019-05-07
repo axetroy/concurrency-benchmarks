@@ -10,7 +10,7 @@ import (
 
 func handler(w http.ResponseWriter, req *http.Request) {
 
-	time.Sleep(time.Millisecond * 500)
+	time.Sleep(time.Millisecond * 200)
 
 	b, _ := ioutil.ReadFile("./test_data.json")
 

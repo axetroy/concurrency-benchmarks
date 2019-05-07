@@ -14,7 +14,7 @@ function sleep(ms) {
 
 async function main() {
   for await (const req of s) {
-    await sleep(500);
+    await sleep(200);
 
     const bin = await Deno.readFile("./test_data.json");
 
