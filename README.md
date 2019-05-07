@@ -1,8 +1,8 @@
 ### TL; DR
 
-高并发测试性能:
+各语言原生 HTTP 高并发测试性能(无多线程):
 
-Golang > Nodejs > (Deno/PHP/Python)
+Golang > Nodejs > (Deno/PHP/Python/Dart)
 
 ### 不同语言实现的高并发测试
 
@@ -28,6 +28,7 @@ Golang > Nodejs > (Deno/PHP/Python)
 - [Golang](#golang)
 - [Python](#python)
 - [PHP](#php)
+- [Dart](#dart)
 
 ### 测试机器
 
@@ -151,6 +152,28 @@ Successful transactions:          48
 Failed transactions:	           0
 Longest transaction:	        9.81
 Shortest transaction:	        0.24
+```
+
+### Dart
+
+```bash
+> dart --version
+Dart VM version: 2.1.0 (Tue Nov 13 18:22:02 2018 +0100) on "macos_x64"
+> dart dart/main.dart
+> bash run.sh
+
+Transactions:		          46 hits
+Availability:		      100.00 %
+Elapsed time:		        9.64 secs
+Data transferred:	        0.00 MB
+Response time:		        4.84 secs
+Transaction rate:	        4.77 trans/sec
+Throughput:		        0.00 MB/sec
+Concurrency:		       23.09
+Successful transactions:          46
+Failed transactions:	           0
+Longest transaction:	        9.45
+Shortest transaction:	        0.22
 ```
 
 ### 声明
