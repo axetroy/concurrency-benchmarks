@@ -11,7 +11,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_response(HTTPStatus.OK)
         f = open("./test_data.json", "r")
         raw = f.read()
-        # time.sleep( 5 )
+        time.sleep( 5 )
         self.end_headers()
         self.wfile.write(raw.encode())
 
