@@ -192,3 +192,69 @@ Benchmarking 127.0.0.1 (be patient)
 apr_socket_recv: Operation timed out (60)
 Total of 6 requests completed
 ```
+
+### PHP
+
+```bash
+> php -S 0.0.0.0:10000 php/index.php
+PHP 7.1.23 Development Server started at Tue May  7 10:55:42 2019
+Listening on http://0.0.0.0:10000
+Document root is /Users/axetroy/gpm/github.com/axetroy/concurrency-benchmarks
+Press Ctrl-C to quit.
+```
+
+```
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            10000
+
+Document Path:          /
+Document Length:        20 bytes
+
+Concurrency Level:      100
+Time taken for tests:   0.396 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      186000 bytes
+HTML transferred:       20000 bytes
+Requests per second:    2522.41 [#/sec] (mean)
+Time per request:       39.645 [ms] (mean)
+Time per request:       0.396 [ms] (mean, across all concurrent requests)
+Transfer rate:          458.17 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   1.0      0       5
+Processing:     2   37   6.7     38      45
+Waiting:        0   37   6.8     38      45
+Total:          7   37   5.9     38      45
+
+Percentage of the requests served within a certain time (ms)
+  50%     38
+  66%     39
+  75%     40
+  80%     40
+  90%     42
+  95%     44
+  98%     44
+  99%     45
+ 100%     45 (longest request)
+```
