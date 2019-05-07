@@ -23,6 +23,16 @@ v10.15.3
 > node nodejs/index.js
 ```
 
+### Deno
+
+```bash
+> deno version
+deno: 0.4.0
+v8: 7.6.53
+typescript: 3.4.1
+> deno run --allow-all deno/index.ts
+```
+
 ### Golang
 
 ```bash
