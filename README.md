@@ -19,9 +19,10 @@
 ### 测试机器
 
 操作系统: macOS Mojave 10.14.4
-处理器: 1.8 GHz Intel Core i5
-内存: 8 GB 1600 MHz DDR3
 
+处理器: 1.8 GHz Intel Core i5
+
+内存: 8 GB 1600 MHz DDR3
 
 测试工具: apache bench
 
