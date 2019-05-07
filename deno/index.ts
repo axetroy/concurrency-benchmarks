@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std/http/server.ts";
-const port = 5001;
+const port = 3000;
 const s = serve("127.0.0.1:" + port);
 
 console.log(`listen http://localhost:${port}/`);

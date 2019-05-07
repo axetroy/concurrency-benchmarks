@@ -19,7 +19,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	var (
-		port = "7000"
+		port = "3000"
 	)
 
 	http.HandleFunc("/", handler)

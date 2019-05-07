@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const readFile = require("util").promisify(fs.readFile);
 
-const port = 4000;
+const port = 3000;
 const filePath = path.join(__dirname, "..", "test_data.json");
 
 function sleep(ms) {

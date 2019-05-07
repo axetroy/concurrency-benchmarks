@@ -1,8 +1,5 @@
 <?php
+usleep(200 * 1000);
 
-sleep(0.5);
-
-$data =  readfile("./test_data.json");
-
-echo $data
+echo "hello world"
 ?>
