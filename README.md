@@ -18,7 +18,12 @@
 
 ### 测试机器
 
-MacOS
+操作系统: macOS Mojave 10.14.4
+处理器: 1.8 GHz Intel Core i5
+内存: 8 GB 1600 MHz DDR3
+
+
+测试工具: apache bench
 
 #### NodeJs
 
@@ -92,6 +97,17 @@ deno: 0.4.0
 v8: 7.6.53
 typescript: 3.4.1
 > deno run --allow-all deno/index.ts
+```
+
+```
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+apr_pollset_poll: The timeout specified has expired (70007)
 ```
 
 ### Golang
