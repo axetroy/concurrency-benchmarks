@@ -1,3 +1,9 @@
+### TL; DR
+
+高并发测试性能:
+
+Golang > Nodejs > (Deno/PHP/Python)
+
 ### 不同语言实现的高并发测试
 
 测试参数:
@@ -146,3 +152,7 @@ Failed transactions:	           0
 Longest transaction:	        9.81
 Shortest transaction:	        0.24
 ```
+
+### 声明
+
+这个测试并不是标准的基准测试，也不是都很熟悉这些语言，如有错误，欢迎指出。
