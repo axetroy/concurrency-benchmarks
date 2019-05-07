@@ -12,9 +12,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 
 	time.Sleep(time.Millisecond * 200)
 
-	b, _ := ioutil.ReadFile("./test_data.json")
-
-	w.Write(b)
+	w.Write(byte("Hello, world!"))
 }
 
 func main() {

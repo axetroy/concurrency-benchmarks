@@ -14,11 +14,9 @@ function sleep(ms) {
 
 async function main() {
   for await (const req of s) {
-    await sleep(200);
-
-    const bin = await Deno.readFile("./test_data.json");
-
-    req.respond({ body: bin });
+    sleep(200).then(() => {
+      req.respond({ body: new TextEncoder().encode("Hello, world!") });
+    });
   }
 }
 

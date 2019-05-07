@@ -1,5 +1,11 @@
 <?php
-usleep(200 * 1000);
+// usleep(200 * 1000);
+// echo "Hello, world!"
 
-echo "hello world"
+
+for($i = 0; $i < 5; $i++)
+{
+    echo $i;
+    sleep(5);
+}
 ?>

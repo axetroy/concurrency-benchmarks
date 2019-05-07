@@ -2,7 +2,7 @@
 
 各语言原生 HTTP 高并发测试性能(无多线程):
 
-Golang > Nodejs > (Deno/PHP/Python/Dart)
+Golang > Nodejs > Python(异步IO) > Dart(异步IO) > Deno > PHP
 
 ### 不同语言实现的高并发测试
 
@@ -72,18 +72,18 @@ typescript: 3.4.1
 > deno run --allow-all deno/index.ts
 > bash run.sh
 
-Transactions:		          47 hits
+Transactions:		        3940 hits
 Availability:		      100.00 %
-Elapsed time:		        9.85 secs
-Data transferred:	        0.00 MB
-Response time:		        4.98 secs
-Transaction rate:	        4.77 trans/sec
-Throughput:		        0.00 MB/sec
-Concurrency:		       23.79
-Successful transactions:          47
+Elapsed time:		        9.67 secs
+Data transferred:	        0.05 MB
+Response time:		        0.24 secs
+Transaction rate:	      407.45 trans/sec
+Throughput:		        0.01 MB/sec
+Concurrency:		       98.17
+Successful transactions:        3940
 Failed transactions:	           0
-Longest transaction:	        9.71
-Shortest transaction:	        0.28
+Longest transaction:	        0.35
+Shortest transaction:	        0.20
 ```
 
 ### Golang
@@ -116,17 +116,17 @@ Python 3.7.3
 > python3 python3/index.py
 > bash run.sh
 
-Transactions:		          47 hits
-Availability:		       35.88 %
-Elapsed time:		        9.80 secs
-Data transferred:	        0.00 MB
-Response time:		        1.16 secs
-Transaction rate:	        4.80 trans/sec
-Throughput:		        0.00 MB/sec
-Concurrency:		        5.58
-Successful transactions:          47
-Failed transactions:	          84
-Longest transaction:	        1.26
+Transactions:		        5532 hits
+Availability:		       84.37 %
+Elapsed time:		        9.54 secs
+Data transferred:	        0.07 MB
+Response time:		        0.10 secs
+Transaction rate:	      579.87 trans/sec
+Throughput:		        0.01 MB/sec
+Concurrency:		       56.57
+Successful transactions:        5532
+Failed transactions:	        1025
+Longest transaction:	        7.58
 Shortest transaction:	        0.00
 ```
 
@@ -162,18 +162,18 @@ Dart VM version: 2.1.0 (Tue Nov 13 18:22:02 2018 +0100) on "macos_x64"
 > dart dart/main.dart
 > bash run.sh
 
-Transactions:		          46 hits
+Transactions:		        4261 hits
 Availability:		      100.00 %
-Elapsed time:		        9.64 secs
-Data transferred:	        0.00 MB
-Response time:		        4.84 secs
-Transaction rate:	        4.77 trans/sec
-Throughput:		        0.00 MB/sec
-Concurrency:		       23.09
-Successful transactions:          46
+Elapsed time:		        9.83 secs
+Data transferred:	        0.05 MB
+Response time:		        0.23 secs
+Transaction rate:	      433.47 trans/sec
+Throughput:		        0.01 MB/sec
+Concurrency:		       98.85
+Successful transactions:        4261
 Failed transactions:	           0
-Longest transaction:	        9.45
-Shortest transaction:	        0.22
+Longest transaction:	        0.44
+Shortest transaction:	        0.20
 ```
 
 ### 声明
