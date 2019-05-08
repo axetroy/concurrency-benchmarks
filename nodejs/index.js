@@ -1,22 +1,14 @@
 const http = require("http");
 const fs = require("fs");
-const path = require("path");
-const readFile = require("util").promisify(fs.readFile);
 
 const port = 3000;
 
-function sleep(ms) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve();
-    }, ms);
-  });
-}
+const content = fs.readFileSync("./test_file.js");
 
 http
-  .createServer(async function(request, response) {
-    await sleep(200);
-    response.end("Hello, world!");
+  .createServer(function(req, res) {
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.end(content);
   })
   .listen(port);
 

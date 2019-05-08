@@ -5,14 +5,18 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"time"
 )
 
+var content []byte
+
+func init() {
+	b, _ := ioutil.ReadFile("./test_file.js")
+
+	content = b
+}
+
 func handler(w http.ResponseWriter, req *http.Request) {
-
-	time.Sleep(time.Millisecond * 200)
-
-	w.Write(byte("Hello, world!"))
+	w.Write(content)
 }
 
 func main() {

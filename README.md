@@ -1,8 +1,9 @@
 ### TL; DR
 
-各语言原生 HTTP 高并发测试性能(无多线程):
+> 各语言原生 HTTP 高并发测试性能
+> 尽量排除其他因素的影响，例如各语言文件读写能力
 
-Golang > Nodejs > Python(异步IO) > Dart(异步IO) > Deno > PHP
+结论: Golang > Deno > Nodejs > Python(异步IO) > Dart(异步IO) > PHP
 
 ### 不同语言实现的高并发测试
 
@@ -13,8 +14,7 @@ Golang > Nodejs > Python(异步IO) > Dart(异步IO) > Deno > PHP
 
 服务的的操作:
 
-1. 模拟耗时 200 ms 的操作
-2. 返回 hello world
+1. 返回一个 `test_file.js` 文件的内容
 
 测试脚本
 ```bash
@@ -42,24 +42,48 @@ Golang > Nodejs > Python(异步IO) > Dart(异步IO) > Deno > PHP
 
 #### NodeJs
 
+1. Without cluster
+
 ```bash
 > node -v
 v10.15.3
 > node nodejs/index.js
 > bash run.sh
 
-Transactions:		        4306 hits
+Transactions:		        9049 hits
 Availability:		      100.00 %
-Elapsed time:		        9.58 secs
-Data transferred:	        0.07 MB
-Response time:		        0.22 secs
-Transaction rate:	      449.48 trans/sec
-Throughput:		        0.01 MB/sec
-Concurrency:		       98.74
-Successful transactions:        4306
+Elapsed time:		        9.16 secs
+Data transferred:	     2639.57 MB
+Response time:		        0.10 secs
+Transaction rate:	      987.88 trans/sec
+Throughput:		      288.16 MB/sec
+Concurrency:		       98.60
+Successful transactions:        9049
 Failed transactions:	           0
-Longest transaction:	        0.29
-Shortest transaction:	        0.20
+Longest transaction:	        0.37
+Shortest transaction:	        0.00
+```
+
+2. With cluster
+
+```bash
+> node -v
+v10.15.3
+> node nodejs/cluster.js
+> bash run.sh
+
+Transactions:		        8431 hits
+Availability:		      100.00 %
+Elapsed time:		        9.12 secs
+Data transferred:	     2459.30 MB
+Response time:		        0.10 secs
+Transaction rate:	      924.45 trans/sec
+Throughput:		      269.66 MB/sec
+Concurrency:		       95.72
+Successful transactions:        8431
+Failed transactions:	           0
+Longest transaction:	        0.35
+Shortest transaction:	        0.00
 ```
 
 ### Deno
@@ -72,18 +96,18 @@ typescript: 3.4.1
 > deno run --allow-all deno/index.ts
 > bash run.sh
 
-Transactions:		        3940 hits
+Transactions:		        9213 hits
 Availability:		      100.00 %
-Elapsed time:		        9.67 secs
-Data transferred:	        0.05 MB
-Response time:		        0.24 secs
-Transaction rate:	      407.45 trans/sec
-Throughput:		        0.01 MB/sec
-Concurrency:		       98.17
-Successful transactions:        3940
+Elapsed time:		        9.74 secs
+Data transferred:	     2687.41 MB
+Response time:		        0.10 secs
+Transaction rate:	      945.89 trans/sec
+Throughput:		      275.91 MB/sec
+Concurrency:		       98.99
+Successful transactions:        9213
 Failed transactions:	           0
-Longest transaction:	        0.35
-Shortest transaction:	        0.20
+Longest transaction:	        0.30
+Shortest transaction:	        0.06
 ```
 
 ### Golang
@@ -94,18 +118,18 @@ go version go1.11.2 darwin/amd64
 > go run go/main.go
 > bash run.sh
 
-Transactions:		        4509 hits
+Transactions:		       11523 hits
 Availability:		      100.00 %
-Elapsed time:		        9.51 secs
-Data transferred:	        0.08 MB
-Response time:		        0.21 secs
-Transaction rate:	      474.13 trans/sec
-Throughput:		        0.01 MB/sec
-Concurrency:		       98.58
-Successful transactions:        4509
+Elapsed time:		        9.71 secs
+Data transferred:	     3386.32 MB
+Response time:		        0.05 secs
+Transaction rate:	     1186.71 trans/sec
+Throughput:		      348.75 MB/sec
+Concurrency:		       61.55
+Successful transactions:       11609
 Failed transactions:	           0
-Longest transaction:	        0.24
-Shortest transaction:	        0.20
+Longest transaction:	        0.38
+Shortest transaction:	        0.00
 ```
 
 ### Python
@@ -162,20 +186,24 @@ Dart VM version: 2.1.0 (Tue Nov 13 18:22:02 2018 +0100) on "macos_x64"
 > dart dart/main.dart
 > bash run.sh
 
-Transactions:		        4261 hits
+Transactions:		        1847 hits
 Availability:		      100.00 %
-Elapsed time:		        9.83 secs
-Data transferred:	        0.05 MB
-Response time:		        0.23 secs
-Transaction rate:	      433.47 trans/sec
-Throughput:		        0.01 MB/sec
-Concurrency:		       98.85
-Successful transactions:        4261
+Elapsed time:		        9.13 secs
+Data transferred:	      538.77 MB
+Response time:		        0.47 secs
+Transaction rate:	      202.30 trans/sec
+Throughput:		       59.01 MB/sec
+Concurrency:		       94.18
+Successful transactions:        1847
 Failed transactions:	           0
-Longest transaction:	        0.44
-Shortest transaction:	        0.20
+Longest transaction:	        1.04
+Shortest transaction:	        0.06
 ```
 
 ### 声明
 
-这个测试并不是标准的基准测试，也不是都很熟悉这些语言，如有错误，欢迎指出。
+这个测试并不是标准的基准测试，也不是都很熟悉这些语言。
+
+而且是在服务的和客户端在同一台机器，有竞争状态不是很准确。
+
+如有错误，欢迎指出。

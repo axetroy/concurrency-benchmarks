@@ -5,13 +5,15 @@ import asyncio
 
 port = 3000
 
+file_content = open("./test_file.js", "r").read()
+
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        asyncio.sleep(0.2)
         self.send_response(HTTPStatus.OK)
+        self.send_header("Content-Type", "text/plain; charset=utf-8")
         self.end_headers()
-        self.wfile.write("Hello, world!".encode("utf-8"))
+        self.wfile.write(file_content.encode("utf-8"))
 
 
 def main():
